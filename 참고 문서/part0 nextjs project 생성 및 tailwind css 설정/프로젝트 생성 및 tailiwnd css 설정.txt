@@ -1,0 +1,102 @@
+1. 프로젝트 생성
+C:\Users\terec\baysoft>npx create-next-app@latest baysoft-front-test
+√ Would you like to use TypeScript? ... No / Yes
+√ Would you like to use ESLint? ... No / Yes
+√ Would you like to use Tailwind CSS? ... No / Yes
+√ Would you like to use `src/` directory? ... No / Yes
+√ Would you like to use App Router? (recommended) ... No / Yes
+√ Would you like to customize the default import alias (@/*)? ... No / Yes
+
+
+
+2. 프로젝트로 이동
+cd baysoft-front-test
+
+
+
+3. app/globals.css 확인
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+4. app/page.tsx 즉 기본 페이지를 tailwind css welcom page 코드로 수정
+
+import Image from "next/image";
+
+export default function Home() {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-blue-100 to-blue-300 flex flex-col items-center justify-center p-4">
+      <main className="bg-white rounded-xl shadow-2xl p-8 max-w-2xl w-full">
+        <div className="text-center">
+          <Image
+            src="/next.svg"
+            alt="Next.js Logo"
+            width={180}
+            height={37}
+            className="mx-auto mb-8"
+          />
+          <h1 className="text-4xl font-bold text-gray-800 mb-4">
+            Welcome to Next.js with Tailwind CSS
+          </h1>
+          <p className="text-xl text-gray-600 mb-8">
+            Get started by editing{" "}
+            <code className="bg-gray-100 rounded px-2 py-1 font-mono text-sm">
+              src/app/page.tsx
+            </code>
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {[
+            { title: "Documentation", url: "https://nextjs.org/docs" },
+            { title: "Learn", url: "https://nextjs.org/learn" },
+            { title: "Templates", url: "https://vercel.com/templates?framework=next.js" },
+            { title: "Deploy", url: "https://vercel.com/new" },
+          ].map((item, index) => (
+            <a
+              key={index}
+              href={item.url}
+              className="block p-6 bg-blue-50 rounded-lg hover:bg-blue-100 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h2 className="text-2xl font-semibold text-blue-800 mb-2">
+                {item.title} &rarr;
+              </h2>
+              <p className="text-blue-600">
+                {index % 2 === 0
+                  ? "Find in-depth information about Next.js features and API."
+                  : "Learn about Next.js in an interactive course with quizzes!"}
+              </p>
+            </a>
+          ))}
+        </div>
+      </main>
+      
+      <footer className="mt-8 text-center text-gray-600">
+        Powered by{" "}
+        <a
+          href="https://vercel.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-bold hover:text-blue-600"
+        >
+          Vercel
+        </a>
+      </footer>
+    </div>
+  );
+}
+
+
+
+5. 서버 실행
+npm run dev
+
+
+6. 기본 페이지 확인
+
+
+

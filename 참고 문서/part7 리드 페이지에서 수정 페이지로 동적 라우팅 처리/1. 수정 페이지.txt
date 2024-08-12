@@ -1,0 +1,59 @@
+// rc\app\todo\modify\[id]\page.tsx
+'use client'
+
+import React from 'react'
+import { useParams } from 'next/navigation'
+
+const TodoModify = () => {
+    const params = useParams()
+    const id = params.id
+
+    return (
+        <div className="p-4">
+            <h1 className="text-2xl font-bold mb-4">Modify Todo</h1>
+            <p className="text-lg mb-4">Modifying Todo ID: {id}</p>
+
+            <div className="mt-4">
+                <input
+                    type="text"
+                    placeholder="Todo title"
+                    className="border p-2 mr-2"
+                />
+                <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                    Update Todo
+                </button>
+            </div>
+        </div>
+    )
+}
+
+export default TodoModify// rc\app\todo\modify\[id]\page.tsx
+'use client'
+
+import React from 'react'
+import { useParams } from 'next/navigation'
+
+const TodoModify = () => {
+    const params = useParams()
+    const id = params.id
+
+    return (
+        <div className="p-4">
+            <h1 className="text-2xl font-bold mb-4">Modify Todo</h1>
+            <p className="text-lg mb-4">Modifying Todo ID: {id}</p>
+
+            <div className="mt-4">
+                <input
+                    type="text"
+                    placeholder="Todo title"
+                    className="border p-2 mr-2"
+                />
+                <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                    Update Todo
+                </button>
+            </div>
+        </div>
+    )
+}
+
+export default TodoModify
